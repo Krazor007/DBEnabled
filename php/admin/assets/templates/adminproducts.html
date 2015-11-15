@@ -1,0 +1,37 @@
+<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6" style="position:relative;float:left;padding-bottom:15px" ng-repeat="product in products| filter: searchKeyword">
+  <div class="media prod_module hvr-glow" style="padding:1%">
+  <div class="media-left hidden-xs">
+    <a href="#">
+      <img class="media-object" src="{{product.pimgpath}}" alt="...">
+    </a>
+  </div>
+  <div class="hidden-md hidden-sm hidden-lg" style="width:25px;height:175px;border-left:solid #2A3744 4px;float:left;">
+    
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{product.pname}}</h4>
+     <div class="row">
+     <div class="col-md-4 col-sm-2 col-xs-3 col-lg-3">
+     <p><b>Strength:</b></p>
+     </div>
+     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
+     <p style="text-align:left">{{product.pstrength}}</p>
+     </div>
+     </div>
+      <div class="row">
+      <div class="col-md-12">
+      <p><b>Packingsize:</b></p>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-md-12">
+      <p style="text-align:left">{{product.ppacksize}}</p>
+      </div>
+      </div>
+  </div>
+</div>
+</div>
+<script>
+
+</script>
+

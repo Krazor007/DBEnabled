@@ -1,0 +1,35 @@
+<div class="container" style="width:100%;height:500px !important;">
+	<div id="cont1" style="width:100%;height:100%;background-image:url('assets/img/bg1.jpg');background-size:100% 100%;position:absolute;padding-bottom:5%;"></div>
+	<div id="cont2" style="width:100%;height:100%;background-image:url('assets/img/bg2.jpg');background-size:100% 100%;position:absolute;padding-bottom:5%;"></div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+     var toggle = 0;
+     var items = 4;
+     var count = 0;
+    $("#cont2").hide();
+		$(".navbar").click(function(){
+			//alert("hi");
+			if(toggle == 0)
+			{
+				toggle = 1;
+        	$("#cont1").removeClass("animated slideOutRight slideInLeft").addClass("animated slideOutRight").fadeOut(1000);
+        	$("#cont2").removeClass("animated slideOutRight slideInLeft").addClass("animated slideInLeft").show().fadeIn(1000);
+        	//count ++;
+        	}
+        	
+        	else
+        	{
+        		toggle = 0;
+        	$("#cont2").removeClass("animated slideOutRight slideInLeft").addClass("animated slideOutRight").fadeOut(1000);
+        	$("#cont1").removeClass("animated slideOutRight slideInLeft").addClass("animated slideInLeft").fadeIn(1000);
+        	//count ++;
+        	}
+
+		});
+
+		setInterval(function(){$(".navbar").click()}, 6000);
+		$("#searchform").hide();
+});
+
+</script>
