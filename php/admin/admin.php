@@ -36,7 +36,7 @@ else
 </head>
 <body class="back-color-body" ng-app="adminapp">
 <div class="container-fluid">
-<nav class="navbar navbar-default navbar-fixed-top back-color">
+<nav class="navbar navbar-default navbar-fixed-top back-color drop-shadow lifted">
   <div class="container">
     <div><div class="col-md-6 col-sm-4 col-xs-3"><h2 style="font-family:raleway;color:white" class=""><a href="#" style="text-decoration:none;color:white">Allcure admin</a></h2></div><div class="col-md-6 col-sm-6 col-xs-8 padding-top-20"><div class="row"><div class="col-md-4 col-sm-4 col-xs-4"><input type="search" class="form-control" placeholder="Search" ng-model="searchKeyword"></div><div class="col-md-6 col-sm-6 col-xs-4"><p style="color:white;"><?php echo $message ?></p></div><div class="col-md-2 col-sm-2 col-xs-2"><form name="form2" method="post" action="logout.php">
 	<input type="submit" name="Submit" value="Logout" class="btn bt-default hvr-shutter-in-vertical">

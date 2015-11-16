@@ -36,14 +36,19 @@ This footer is displayed on all the pages
 
 .publicity-block{
 	font-size: 30px;
-	letter-spacing: 5px;
 }
+
+.media-icons{
+	float: left;
+ 	margin-left: 10px;
+ }
 
 .icon-hov:hover{
 	cursor: pointer;
 	-webkit-transition: 0.3s ease all; /* Safari 3.1 to 6.0 */
     transition:  0.3s ease all;
 }
-.icon-hov.facebook:hover{	color:#3b5998;	}
-.icon-hov.twitter:hover{	color:#1dcaff;	}
-.icon-hov.linkedin:hover{	color:#0077b5;	}
+.icon-hov.facebook:hover	{	color:#3b5998;	}
+.icon-hov.twitter:hover		{	color:#1dcaff;	}
+.icon-hov.linkedin:hover	{	color:#0077b5;	}
+.icon-hov.googleplus:hover	{	color:#dd4b39;	}

@@ -22,6 +22,18 @@ body{
 
 }
 
+.container
+{
+	padding: 0px !important;
+	width:100%;
+	padding-top: 10%;
+}
+
+.pview
+{
+	padding-top: 5%;
+}
+
 /*-----------Variables-----------------
 
 Blue1:#204d74;

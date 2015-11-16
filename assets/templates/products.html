@@ -1,5 +1,15 @@
-<div class="row"><div class="col-md-12 col-sm-12 col-xs-12 col-lg-12"><h3>Products we offer :</h3></div></div>
-<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6" style="position:relative;float:left;padding-bottom:15px" ng-repeat="product in products| filter: searchKeyword">
+<!-- <div class="row"><div class="col-md-12 col-sm-12 col-xs-12 col-lg-12"><h3>Products we offer :</h3></div></div> -->
+<div class="page-title">Porducts we offer</div>
+<div class="page-title-border"></div><br/><br/>
+<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12"><p style="float:left;padding-right:1%">Sort by:</p>
+<div class="btn-group" role="group" aria-label="..." style="padding-bottom:3%">
+  <button id="ab_sort" type="button" class="btn btn-default" ng-click="setSort_ab()">Name &nbsp;<span ng-class="ordr_ab ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
+  <button id="cr_sort" type="button" class="btn btn-default" ng-click="setSort_cr()">Created date &nbsp;<span ng-class="ordr_cr ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
+  <button id="ud_sort" type="button" class="btn btn-default" ng-click="setSort_ud()">Updated date &nbsp;<span ng-class="ordr_ud ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
+</div>
+</div>
+<div class="loadingdiv col-md-12 col-sm-12 col-xs-12 col-lg-12 hvr-bounce-to-right" style="text-align:center;"><h4 style="text-align:center;">Loading products .....</h4></div>
+<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 prod_wrapper" style="position:relative;float:left;padding-bottom:15px;" ng-repeat="product in products| filter: searchKeyword |orderBy:parameter:ordr">
   <div class="media prod_module hvr-glow" style="padding:1%">
   <div class="media-left hidden-xs">
     <a href="#">
@@ -34,6 +44,43 @@
 </div>
 <script>
 	$(document).ready(function(){
+    $(".prod_wrapper").hide();
 		$("#searchform").show();
+    $(".loadingdiv").show();
+$("#cr_sort").click(function(){
+  $(this).css({'background-color':'#2098D1'});
+  $("#ud_sort").css({'background-color':'#FFF'});
+  $("#ab_sort").css({'background-color':'#FFF'});
+});
+
+$("#ud_sort").click(function(){
+  $(this).css({'background-color':'#2098D1'});
+  $("#cr_sort").css({'background-color':'#FFF'});
+  $("#ab_sort").css({'background-color':'#FFF'});
+});
+
+$("#ab_sort").click(function(){
+  $(this).css({'background-color':'#2098D1'});
+  $("#cr_sort").css({'background-color':'#FFF'});
+  $("#ud_sort").css({'background-color':'#FFF'});
+});
+
+setTimeout(function(){
+
+ $(".prod_wrapper").each(function(i){
+   
+   setTimeout(function(){
+    $(".prod_wrapper").eq(i).addClass("animated zoomIn").show();
+   },90*i);
+
+ });
+
+$(".loadingdiv").fadeOut(300);
+
+},700);
+
+
 	});
+
+
 </script>

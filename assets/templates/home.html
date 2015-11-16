@@ -1,6 +1,13 @@
-<div class="container" style="width:100%;height:500px !important;">
-	<div id="cont1" style="width:100%;height:100%;background-image:url('assets/img/bg1.jpg');background-size:100% 100%;position:absolute;padding-bottom:5%;"></div>
-	<div id="cont2" style="width:100%;height:100%;background-image:url('assets/img/bg2.jpg');background-size:100% 100%;position:absolute;padding-bottom:5%;"></div>
+<div class="container responsv">
+<div id="dummy" style="display:none"></div>
+	<div id="cont1" class="content1 box13">
+		<div class="content-wrapper"><h3>Who are we?</h3></div>
+		<div class="text-wrapper"><p>Headquartered in Mumbai, India, Allcure is today an integrated pharmaceutical company with infrastructure, skills and resources that are at par with the best in the world</p></div>
+	</div>
+	<div id="cont2" class="content2 box13">
+		<div class="content-wrapper"><h3>Our Business</h3></div>
+		<div class="text-wrapper"><p>Allcure manufactures and markets formulations under its own brands in the international market and exports its own formulations to Asia, Africa, CIS, Europe, Latin America and the Middle East and soon we plan to have our presence and establish in Domestic Market.We plan to manufacture solid oral formulations for the international regulated markets.</p></div>
+	</div>
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -8,13 +15,13 @@ $(document).ready(function(){
      var items = 4;
      var count = 0;
     $("#cont2").hide();
-		$(".navbar").click(function(){
+		$("#dummy").click(function(){
 			//alert("hi");
 			if(toggle == 0)
 			{
 				toggle = 1;
         	$("#cont1").removeClass("animated slideOutRight slideInLeft").addClass("animated slideOutRight").fadeOut(1000);
-        	$("#cont2").removeClass("animated slideOutRight slideInLeft").addClass("animated slideInLeft").show().fadeIn(1000);
+        	$("#cont2").removeClass("animated slideOutRight slideInLeft").addClass("animated slideInLeft").fadeIn(1000);
         	//count ++;
         	}
         	
@@ -27,9 +34,11 @@ $(document).ready(function(){
         	}
 
 		});
+         
 
-		setInterval(function(){$(".navbar").click()}, 6000);
-		$("#searchform").hide();
-});
+				$("#searchform").hide();
+
+				$(".responsv").on("swipeleft",function(e){e.preventDefault();$("#dummy").click();});
+		});
 
 </script>
