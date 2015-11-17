@@ -14,8 +14,7 @@ This body is displayed on all the pages
 }
 
 .body-container{	
-	padding: 5px;
-	width: 100%;
+	padding: 25px 0;
 }
 
 
@@ -35,10 +34,18 @@ This body is displayed on all the pages
 	content: '';
 	background-color: #1a6f70;
 }
+.page-title-border.left{
+	margin: 0;
+}
 
 .sub-title{
 	background-color: #1a6f70;
 	font-size: 15px;
 	text-align: left;
 
+}
+
+.first-of-p{
+	font-size: 18px;
+	color: #1a6f70;
 }

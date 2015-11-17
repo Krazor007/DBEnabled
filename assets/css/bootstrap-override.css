@@ -18,11 +18,16 @@ a:hover{
 /*---------------------------Menu bar---------------------------*/
 
 .navbar-default{
-	background: inherit !important;
+	background: inherit; !important;
 	border: none !important;
 	font-weight: 700;
 }
 
+nav{
+	box-shadow:none !important;
+	-webkit-box-shadow:none !important;
+    -moz-box-shadow:none !important;
+}
 
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
