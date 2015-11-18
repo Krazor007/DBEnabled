@@ -47,6 +47,12 @@ p{
 	font-size: 13px;
 	letter-spacing: 0.25px;
 	line-height: 20px;
+	color: #222;
+}
+
+.btn{
+	border-radius: 1px !important;
+	border:none !important;
 }
 
 /*---------------------------Body---------------------------*/

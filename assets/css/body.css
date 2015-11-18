@@ -49,3 +49,12 @@ This body is displayed on all the pages
 	font-size: 18px;
 	color: #1a6f70;
 }
+
+.basic-button{
+	background-color:#176364;
+	color:#dcdcdc;
+}
+.basic-button:hover{
+	background-color:#218C8D;
+	transition:0.35s ease all;
+}
