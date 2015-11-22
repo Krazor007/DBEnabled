@@ -54,7 +54,22 @@ else
 </head>
 
 <body ng-app="navapp" ng-controller="AppCtrl">
-<!-- 				<nav class="navbar navbar-default navbar-fixed-top">
+
+		<!--==================================Header===================================-->
+
+		<div class="header-outer">
+			<div class="container">	
+			.
+			</div>
+		</div>
+
+		<!--==================================Header===================================-->
+
+		<!--==================================Menu===================================-->
+
+		<div class="menubar-outer">	
+			<div class="menu-container">
+				<nav class="navbar navbar-default ">
 		      		<div class="container">
 		        		<div class="navbar-header">
 					          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -65,65 +80,29 @@ else
 					          </button>
 					          <a class="navbar-brand" href="#">
 					          <span class="logo-text">Allcure Lifescience</span>
-					          <img alt="Allcure LifeSscience" src="assets/img/favicon.png" height="40px" width="40px" />
+					          <img alt="Allcure LifeSscience" src="assets/img/favicon.png" height="40px" width="40px"/>
 					          </a>
 		        		</div>
-		        		<div class="form-group"><input type="text" class="form-control" placeholder="Search" ng-model="searchKeyword"></div></div>
-				        <div id="navbar" class="navbar-collapse collapse in">
+				        <div id="navbar" class="collapse navbar-collapse">
 				          <ul class="nav navbar-nav navbar-right">
 				            <li class="active"><a href="#">Home</a></li>
 				            <li><a href="#aboutus">About Us</a></li>
 				            <li><a href="#products">Products</a></li>
 				            <li><a href="#contactus">Contact Us</a></li>
 				          </ul>
-				        </div>
+				        </div><!--/.nav-collapse -->
 				    </div>
 		    	</nav>
- -->
-
- <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        <img class = "navbar-brand logo-img" alt="Allcure Lifescience" src="assets/img/favicon.png" height="40px" width="40px" />
-      <a class="navbar-brand logo-text" href="#">Allcure Lifescience</a>
-      
-      
-      
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <form  id="searchform" class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="search" class="form-control" placeholder="Search" ng-model="keyword">
-        </div>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#/aboutus">About Us</a></li>
-        <li><a href="#/products">Products</a></li>
-        <li><a href="#/contactus">Contact Us</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+		    </div>
+		</div>  <!-- menubar-outer ends -->
 
 		<!--==================================Menu===================================-->
 
 		<!--==================================Body===================================-->
 
 		<div class="body-outer">
-			<div class="container" style="padding-top:4%">	
-				<div class="body-container">
-					<div class="col-md-12 col-sm-12 col-xs-12 pview" style="padding-bottom:50px;" ng-view></div>
-				</div>
+			<div class="container">	
+				<div class="col-md-12 col-sm-12 col-xs-12 body-container"  ng-view></div>
 			</div>
 		</div>
 
