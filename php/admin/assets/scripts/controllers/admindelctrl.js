@@ -1,5 +1,5 @@
-app.controller('ProdCtrl', function ($scope,$http) {   
-	$scope.text = "This is the Products page";
+app.controller('DelCtrl', function ($scope,$http,$route) {   
+	$scope.text = "This is the delete page";
 	$scope.products = [];
     $scope.ptypes = [];
     $scope.stat_array = [{"status":"show"},{"status":"hide"}];
@@ -21,6 +21,8 @@ app.controller('ProdCtrl', function ($scope,$http) {
     $scope.pstatus = "init_status";
     $scope.typefilter = [];
     $scope.filtercontent = "";
+    $scope.delcount = 0;
+    $scope.delitems = [];
 	$scope.getItems = function()
 	{
 			 $http.get('http://localhost/php/admin/getItemsAdmin.php').
@@ -35,7 +37,7 @@ app.controller('ProdCtrl', function ($scope,$http) {
     {
              $http.get('http://localhost/php/admin/getTypes.php').
                 success(function(data) {
-            // here the data from the api is assigned to a variable named ptypes and typefilter
+            // here the data from the api is assigned to a variable named ptypes n typefilter
             $scope.ptypes = data;
              $scope.typefilter = data;
         });
@@ -105,8 +107,57 @@ app.controller('ProdCtrl', function ($scope,$http) {
 
     };
 
+    $scope.delete = function(){
+
+        if(!$scope.delcount >0)
+        {
+            alert("You have not selected any items to delete !");
+        }
+        else
+        {
+            var r =confirm("You are going to delete "+$scope.delcount+" item(s) permanently, proceed?");
+            if(r == true)
+            {
+            var jsonString = JSON.stringify($scope.delitems);
+               $.ajax({
+                    type: "POST",
+                    url: "delete.php",
+                    data: {'content':jsonString}, 
+                    cache: false,
+
+                    success: function(){
+                        $route.reload();
+                    }
+                });
+            }
+            else
+            {
+
+            }
+
+        }
+    };
+
+    $scope.toggleSelect = function($event,item){
+
+        if($scope.delitems.indexOf(item) == -1)
+        {
+        $scope.delitems.push(item);
+        $scope.delcount = $scope.delitems.length;
+        item.selected = true;
+        
+        }
+        else
+        {
+        $scope.delitems.splice($scope.delitems.indexOf(item),1);
+        $scope.delcount = $scope.delitems.length;
+        item.selected = false;
+        }
+
+
+    };
+
 	$scope.getItems();
     $scope.getTypes();
  
-
 });

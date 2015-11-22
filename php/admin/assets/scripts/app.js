@@ -13,6 +13,10 @@ app.config(['$routeProvider',
         templateUrl: path + 'adminproducts.html',
         controller: 'ProdCtrl'
       }).
+        when('/harddelete', {
+        templateUrl: path + 'delproducts.html',
+        controller: 'DelCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });

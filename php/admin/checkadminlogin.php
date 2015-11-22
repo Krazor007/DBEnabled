@@ -1,10 +1,6 @@
 
 <?php
-
-$host="localhost"; // Host name 
-$username="root"; // Mysql username 
-$password=""; // Mysql password 
-$db_name="allcure_db"; // Database name 
+include 'connection.php';
 $tbl_name="admns"; // Table name 
 
 // Connect to server and select databse.

@@ -9,16 +9,29 @@ app.controller('ProductCtrl', function ($scope,$http) {
 	$scope.createdat = "created_at";
 	$scope.updatedat = "updated_at";
 	$scope.parameter = "pname";
+    $scope.imgabsolute = "/assets/img/";
+    $scope.filtercontent = "";
+    $scope.typefilter = [];
 	$scope.getItems = function()
 	{
-			 $http.get('http://192.168.0.101/php/getItems.php').
+			 $http.get('http://localhost/php/getItems.php').
         		success(function(data) {
-            // here the data from the api is assigned to a variable named users
+            
             $scope.products = data;
 
         });
 		   
 	}
+
+        $scope.getTypes = function()
+    {
+             $http.get('http://localhost/php/admin/getTypes.php').
+                success(function(data) {
+            // here the data from the api is assigned to a variable named users
+             $scope.typefilter = data;
+        });
+           
+    }
 
 		$scope.setSort_ab = function(){
          
@@ -73,5 +86,6 @@ app.controller('ProductCtrl', function ($scope,$http) {
          $scope.parameter = $scope.updatedat;
     };
 
-	$scope.getItems(); 
+	$scope.getItems();
+    $scope.getTypes();  
 });

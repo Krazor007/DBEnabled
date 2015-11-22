@@ -1,6 +1,6 @@
 <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12"><p style="float:left;padding-right:1%">Actions:</p>
 <div class="btn-group" role="group" aria-label="..." style="padding-bottom:3%">
-  <button id="add_item" type="button" class="btn btn-default" ng-click="" data-toggle="modal" data-target="#setModal">Add product &nbsp;<span class="glyphicon glyphicon-plus"></span></button>
+  <button id="add_item" type="button" class="btn btn-default" ng-click="delete()">Delete items &nbsp;<span class="badge">{{delcount}}</span></button>
   <button id="ab_sort" title="sortby name" type="button" class="btn btn-default" ng-click="setSort_ab()">Name &nbsp;<span ng-class="ordr_ab ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
   <button id="cr_sort" title="sortby date created" type="button" class="btn btn-default" ng-click="setSort_cr()">Created date &nbsp;<span ng-class="ordr_cr ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
   <button id="ud_sort" title="sortby date updated" type="button" class="btn btn-default" ng-click="setSort_ud()">Updated date &nbsp;<span ng-class="ordr_ud ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
@@ -14,7 +14,7 @@
   </div> 
 </div>
 <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6" style="position:relative;float:left;padding-bottom:15px" ng-repeat="product in products | filter: searchKeyword | filter: filtercontent |orderBy:parameter:ordr">
-  <div class="media prod_module hvr-glow" style="padding:1%" ng-click="setValues(product)" data-toggle="modal" data-target="#getModal">
+  <div class="media prod_module hvr-glow" style="padding:1%" ng-click="toggleSelect($event,product)" ng-class="product.selected ? 'selected' : 'na'">
   <div class="media-left hidden-xs">
       <img class="media-object" src="{{imgabsolute+product.pimgpath}}" alt="...">
   </div>
