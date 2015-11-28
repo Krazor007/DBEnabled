@@ -60,12 +60,13 @@
 <script>
 $(document).ready(function(){
 
+    $('.nav a').parent().removeClass('active');
+
 	$(".animatein").each(function(i){
 		$(".animatein").hide();
 		setTimeout(function(){
 			$(".animatein").eq(i).addClass("animated slideInRight").show()},200*i)
 	});
-
 
 	$(".tab-pane").hide();
 	$(".tab-pane").eq(0).addClass("activated animated fadeIn").show();
@@ -76,10 +77,12 @@ $(document).ready(function(){
         $(".tab-pane").eq($(this).index()).addClass("activated animated fadeIn").show();
 	});
 
-
 	$("#searchform").hide();
-
-
 });
+
+    $(function () {
+      $('.nav a:contains("Home")').parent().addClass('active');
+  });
+
 
 </script>

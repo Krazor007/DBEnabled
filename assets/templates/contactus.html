@@ -110,6 +110,7 @@
 
 	$(document).ready(function(){
 		$("#searchform").hide();
+		$('.nav a').parent().removeClass('active');
 	});
 
 
@@ -125,5 +126,7 @@
 			$(".animatein").eq(i).addClass("animated slideInRight").show()},200*i)
 	});
 
-
+	$(function () {
+	    $('.nav a:contains("Contact Us")').parent().addClass('active');
+	});
 </script>

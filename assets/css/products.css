@@ -1,0 +1,27 @@
+.button-head{
+	line-height: 30px;
+}
+
+
+.prod-container{
+	height: 120px;
+	line-height: 18px !important;
+}
+
+.prod-img{
+	width: 120px;
+}
+
+.prod-text{
+	height: 120px;
+	font-size: 12.5px !important;
+}
+
+
+/*bootstrap override*/
+
+.media-heading{
+	font-size: 15px !important;
+	color: #218C8D;
+	margin-bottom: 9px;
+}

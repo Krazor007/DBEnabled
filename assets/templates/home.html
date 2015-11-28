@@ -27,11 +27,21 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
+
+    $('.nav a').parent().removeClass('active');
+
 	$(".ani").hide()
 	$(".ani").each(function(i){
 		setTimeout(function(){
 			$(".ani").eq(i).addClass("animated slideInLeft").show()},200*i)
 	});
 });
+
+
+    $(function () {
+      $('.nav a:contains("Home")').parent().addClass('active');
+  });
+
+
 
 </script>
